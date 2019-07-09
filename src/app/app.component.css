@@ -1,9 +1,17 @@
-app-history, app-bookmarks, div .videoViewBloc
+app-history, app-bookmarks
 {
-    width: 30%;
-    top: 0;
+    width: 24vw;
 }
 
+app-history, app-bookmarks
+{
+    top: 20px;
+    background-color: #efefef;
+}
+
+.videoViewBloc {
+    margin: 0 4vw;
+}
 
 h1
 {

@@ -8,3 +8,7 @@
     margin: 0 10px;
     border: solid #656565;
 }
+
+#player {
+    width: 33.33%;
+}

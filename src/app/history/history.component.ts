@@ -21,11 +21,6 @@ export class HistoryComponent implements OnInit {
     this.historyService.fetchHistory();
   }
 
-  listHistory(){
-      this.historyService.fetchHistory();
-      this.hidden_html_component = false;
-  }
-
   playVideoFromHistory(url_from_history_list)
   {
     this.videoViewService.setUrl(url_from_history_list)

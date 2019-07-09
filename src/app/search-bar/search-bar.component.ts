@@ -25,7 +25,6 @@ export class SearchBarComponent implements OnInit {
   public searchVideo(inputUrl: string) {
     if (inputUrl.match(this.regexUrl))
     {
-      // inputUrl = inputUrl.replace('watch?v=','embed/');
       this.videoViewService.setUrl(inputUrl);
       this.searchBarService.postData(inputUrl);
       this.historyService.fetchHistory();

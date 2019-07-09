@@ -35,7 +35,7 @@ export class VideoViewComponent implements OnInit {
         this.videoViewService.video_url.subscribe(video_url => this.refreshVideoId(video_url));
 
         this.init();
-        this.video = "xmDCEIp1UJk"//video id
+        this.video = "wZ_qOU28ebA"//video id
 
         window['onYouTubeIframeAPIReady'] = (e) => {
             this.YT = window['YT'];
@@ -54,7 +54,7 @@ export class VideoViewComponent implements OnInit {
         if (this.player) {
             let temp_url = video_url.replace("https://www.youtube.com/watch?v=", "");
             this.video = temp_url.substr(0, 11);
-            this.player.loadVideoUrl("https://www.youtube.com/embed/HIbAz29L-FA");
+            this.player.loadVideoById(this.video);
         }
     }
 

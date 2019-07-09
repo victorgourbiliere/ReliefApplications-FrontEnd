@@ -1,13 +1,15 @@
-<div class="buttonBloc" style="display: flex; justify-content: center">
+
+<div class="counterOfBookmarks">{{bookmarksCount}} saved bookmark(s)</div>
+
+<div class="buttonBloc">
     <div class="button">
         <button (click)="addBookmark()">Bookmark Video</button>
     </div>
     <div class="button">
-        <button (click)="showBookmarks()">Show Bookmarks</button>
+        <button (click)="toggleBookmarks()">Toggle Bookmarks</button>
     </div>
 </div>
 
-<div class="counterOfBookmarks" style="text-align: center">--- {{bookmarksCount}} ---</div>
 
 <ul [hidden]="hidden">
     <li *ngFor="let url of bookmarksList"><a (click)="playVideoFromBookmarks(url)">{{url}}</a></li>
