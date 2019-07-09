@@ -10,7 +10,7 @@ import {HistoryService} from "../services/history.service";
 })
 export class HistoryComponent implements OnInit {
 
-  hidden_html_component = true;
+  //The list that contains the history entries
   url_list_from_DB;
 
   constructor(private historyService: HistoryService,
@@ -21,6 +21,7 @@ export class HistoryComponent implements OnInit {
     this.historyService.fetchHistory();
   }
 
+  //Plays the video on click
   playVideoFromHistory(url_from_history_list)
   {
     this.videoViewService.setUrl(url_from_history_list)

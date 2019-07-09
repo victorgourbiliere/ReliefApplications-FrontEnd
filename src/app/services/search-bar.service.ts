@@ -7,12 +7,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class SearchBarService {
 
+  //Url of the Symfony API
   API_URL = environment.API_URL;
 
   constructor (private httpClient: HttpClient) {}
 
+  //Post url to the database
   postData(videoUrl: string) {
-    //Save url into data base
     return this.httpClient.post(
         this.API_URL + '/save_url',
         videoUrl

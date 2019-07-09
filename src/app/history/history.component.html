@@ -1,7 +1,9 @@
 <h2>History</h2>
 
 <ul>
-    <li *ngFor="let url of url_list_from_DB"><a (click)="playVideoFromHistory(url)">{{url}}</a></li>
+    <li *ngFor="let url of url_list_from_DB">
+        <a (click)="playVideoFromHistory(url)">{{url}}</a>
+    </li>
 </ul>
 
 

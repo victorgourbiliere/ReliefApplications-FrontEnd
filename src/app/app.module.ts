@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {SafePipe, SearchBarComponent} from './search-bar/search-bar.component';
+import {SearchBarComponent} from './search-bar/search-bar.component';
 import { VideoViewComponent } from './video-view/video-view.component';
 import { HistoryComponent } from './history/history.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
@@ -14,7 +14,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     SearchBarComponent,
-    SafePipe,
     VideoViewComponent,
     HistoryComponent,
     BookmarksComponent

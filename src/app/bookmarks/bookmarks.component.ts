@@ -9,9 +9,13 @@ import {isEmpty} from 'rxjs/operators';
 })
 export class BookmarksComponent implements OnInit {
 
+    //Hides or shows bookmarks
     hidden = true;
+    //Url of the video being played
     currentVideoUrl;
+    //List of bookmarks
     bookmarksList = [];
+    //Counter of bookmarks
     bookmarksCount;
 
     constructor(
@@ -25,15 +29,16 @@ export class BookmarksComponent implements OnInit {
         this.refreshBookmarks();
     }
 
+    //Adds a new video in bookmarkList and in localStorage
     public addBookmark() {
-        //Verify if isn't empty
+        //Checks if isn't empty
         if (this.currentVideoUrl !== '') {
             let tempList = [];
-            //Verify if there is key in local storage
+            //Checks if there is key in local storage
             if (localStorage.getItem('bookmarks_list')) {
                 tempList = JSON.parse(localStorage.getItem('bookmarks_list'));
             }
-            //Verify if exist in local storage
+            //Checks if the url is already bookmarked
             if (!tempList.includes(this.currentVideoUrl)) {
                 tempList.push(this.currentVideoUrl);
             }
@@ -42,6 +47,7 @@ export class BookmarksComponent implements OnInit {
         }
     }
 
+    //Hides or shows bookmarks
     public toggleBookmarks() {
         this.refreshBookmarks();
         if (this.hidden === true) {
@@ -51,11 +57,13 @@ export class BookmarksComponent implements OnInit {
         }
     }
 
+    //Refreshes boomarks list
     public refreshBookmarks() {
         this.bookmarksList = JSON.parse(localStorage.getItem('bookmarks_list'));
         this.bookmarksCount = this.bookmarksList.length;
     }
 
+    //Plays the video on click
     public playVideoFromBookmarks(url_from_bookmarks_list) {
         this.videoViewService.setUrl(url_from_bookmarks_list);
     }

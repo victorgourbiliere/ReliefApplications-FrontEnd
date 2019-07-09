@@ -8,16 +8,16 @@ import {BehaviorSubject} from "rxjs";
 })
 export class HistoryService {
 
+  //Url of the Symfony API
   API_URL = environment.API_URL;
-
-  private url_form_DB_temps = new BehaviorSubject([]);
-
+  //Observer pattern to keep the history up-to-date
+  url_form_DB_temps = new BehaviorSubject([]);
   url_list_from_DB = this.url_form_DB_temps.asObservable();
 
   constructor (private httpClient: HttpClient) { }
 
+  //Retrieve the history from database and refresh it
   fetchHistory() {
-    //Get urls form back end
     this.httpClient.get(this.API_URL + '/list_url',
         {responseType: 'json'}).subscribe(
         (response: any[])=>

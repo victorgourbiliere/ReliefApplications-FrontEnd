@@ -1,10 +1,9 @@
-.view
-{
+.view {
     text-align: center;
     margin-bottom: 20px;
 }
-.view iframe
-{
+
+.view iframe {
     margin: 0 10px;
     border: solid #656565;
 }

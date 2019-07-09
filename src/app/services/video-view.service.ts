@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoViewService {
 
-  private video_url_temp = new BehaviorSubject('');
-
+  //Observer pattern to keep the video url value up-to-date
+  video_url_temp = new BehaviorSubject('');
   video_url = this.video_url_temp.asObservable();
 
   constructor() { }
 
+  //Update url
   public setUrl (url: string) {
     this.video_url_temp.next(url);
-  }
-
-  public getUrl (){
-    return this.video_url;
   }
 
 }

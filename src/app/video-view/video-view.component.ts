@@ -12,16 +12,22 @@ import {HistoryService} from "../services/history.service";
 
 export class VideoViewComponent implements OnInit {
 
-    public videoUrl: string;
-    public YT: any;
-    public video: any;
-    public player: any;
-    public reframed: Boolean = false;
+    //Url of the video being played
+    videoUrl: string;
+    //Youtube frame object
+    YT: any;
+    //Id of the video
+    video: any;
+    //Youtube player object
+    player: any;
+    //Parametre for responsive player
+    reframed: Boolean = false;
 
     constructor(private historyService: HistoryService,
                 private videoViewService: VideoViewService) {
     }
 
+    //Load the API
     init() {
         var tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/iframe_api';
@@ -30,13 +36,15 @@ export class VideoViewComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        //Observables to keep the video url up-to-date and refresh the player whenever it changes
         this.videoViewService.video_url.subscribe(video_url => this.videoUrl = video_url);
         this.videoViewService.video_url.subscribe(video_url => this.refreshVideoId(video_url));
 
         this.init();
-        this.video = "wZ_qOU28ebA"//video id
+        //Default video Id
+        this.video = "wZ_qOU28ebA"
 
+        //Create the video player at the start of the component
         window['onYouTubeIframeAPIReady'] = (e) => {
             this.YT = window['YT'];
             this.reframed = false;
@@ -50,6 +58,7 @@ export class VideoViewComponent implements OnInit {
         };
     }
 
+    //Load the new video
     refreshVideoId(video_url) {
         if (this.player) {
             let temp_url = video_url.replace("https://www.youtube.com/watch?v=", "");
@@ -58,6 +67,7 @@ export class VideoViewComponent implements OnInit {
         }
     }
 
+    //Native function of the Youtube player object
     onPlayerStateChange(event) {
         console.log(event)
         switch (event.data) {
@@ -82,11 +92,12 @@ export class VideoViewComponent implements OnInit {
         ;
     };
 
-    //utility
+    //Native function of the Youtube player object
     cleanTime() {
         return Math.round(this.player.getCurrentTime())
     };
 
+    //Native function of the Youtube player object
     onPlayerError(event) {
         switch (event.data) {
             case 2:

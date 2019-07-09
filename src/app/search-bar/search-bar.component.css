@@ -1,22 +1,18 @@
-.input
-{
+.input {
     text-align: center;
     margin-bottom: 20px;
 }
-.input input
-{
+
+.input input {
     width: 60%;
 }
-.input input:hover
-{
+
+.input input:hover {
     padding: 3px;
     transition-duration: 500ms;
 }
-div .validation_message {
 
-}
-.validation_message
-{
+.validation_message {
     text-align: center;
     text-decoration: underline;
     padding: 10px;
