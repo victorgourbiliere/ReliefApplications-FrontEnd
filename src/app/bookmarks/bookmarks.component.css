@@ -1,0 +1,29 @@
+div .counterOfBookmarks
+{
+    text-align: center;
+}
+
+div .buttonBloc
+{
+    display: flex;
+}
+
+ul
+{
+    padding: 0;
+    border: solid #656565;
+}
+ul li
+{
+    text-align: center;
+    word-wrap: break-word;
+    list-style-type: none;
+    margin: 5% 1%;
+}
+ul li:hover
+{
+    font-size: 105%;
+    cursor: pointer;
+    transition-duration: 200ms;
+    color: #5eb5e0;
+}

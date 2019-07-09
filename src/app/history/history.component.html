@@ -1,0 +1,9 @@
+<div class="button">
+    <button (click)="listHistory()">Show History</button>
+</div>
+
+<ul [hidden]="hidden_html_component">
+    <li *ngFor="let url of url_list_from_DB"><a (click)="playVideoFromHistory(url)">{{url}}</a></li>
+</ul>
+
+

@@ -1,0 +1,14 @@
+<h2>Please, chose and enter your YouTube link video</h2>
+
+<form class="input">
+    <input type="text" name="inputVideoUrl" #inputUrl>
+</form>
+
+<div class="validation_message">
+    {{validation_message}}
+</div>
+
+<div class="button">
+    <button (click)="searchVideo(inputUrl.value)">Click to find your video</button>
+</div>
+
